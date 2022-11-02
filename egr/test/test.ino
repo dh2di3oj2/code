@@ -3,13 +3,13 @@
 #include <SPI.h>
 #include <AudioZero.h>
 const int flexPin = A4;			// Pin connected to voltage divider output
-File myFile = SD.open("cic2.wav");
-
+File myFile;
+//const int rate = 88200;
 void setup()
 {
 
   // debug output at 115200 baud
-Serial.begin(9600);
+Serial.begin(115200);
 
   while (!Serial) {
 
@@ -26,15 +26,18 @@ Serial.print("Initializing SD card...");
     Serial.println(" failed!");
 
     while(true);
+  
 
   }
+myFile = SD.open("cic8bit.wav");
 
 Serial.println(" done.");
 
 
 // 44.1kHz stereo => 88200 sample rate
 
-AudioZero.begin(88200);
+
+
 pinMode(flexPin, INPUT);
 /* File myFile = SD.open("cic2.wav");
 
@@ -46,11 +49,22 @@ if (!myFile) {
 
     while (true);
 } */
+//AudioZero.begin(88200);
 
 }
 
 void loop() {  
+//File myFile = SD.open("cic8bit.wav");
 
+ /*  if (!myFile) {
+
+    // if the file didn't open, print an error and stop
+
+    Serial.println("error opening test.wav");
+
+    while (true);
+
+  } */
 
 
 
@@ -58,6 +72,7 @@ void loop() {
 
 //Serial.println("opened file");
 //AudioZero.end();
+
 Serial.println(analogRead(flexPin));
 //delay(100);
 if (analogRead(flexPin) != 1023)
@@ -66,6 +81,7 @@ if (analogRead(flexPin) != 1023)
   // open wave file from sdcard
 
   
+
 
   
 
@@ -76,11 +92,12 @@ if (analogRead(flexPin) != 1023)
 
 
    // until the file is not finished
-  AudioZero.begin(1125);
+
+    AudioZero.begin(88200);
     delay(5);
     AudioZero.play(myFile);
-    delay(3000);
-    //AudioZero.end();
+    //delay(3000);
+    AudioZero.end();
 
     Serial.println("End of file. Thank you for listening!");
     //while(true);
@@ -88,8 +105,9 @@ if (analogRead(flexPin) != 1023)
   }
 
 
-AudioZero.end();
 
 
  delay(50);
+ myFile = SD.open("cic8bit.wav");
+
 }  
