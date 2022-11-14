@@ -75,7 +75,7 @@ void loop() {
 
 Serial.println(analogRead(flexPin));
 //delay(100);
-if (analogRead(flexPin) != 1023)
+if (analogRead(flexPin) == 1023)
 {
 
   // open wave file from sdcard
@@ -95,7 +95,7 @@ if (analogRead(flexPin) != 1023)
 
     AudioZero.begin(88200);
     delay(5);
-    AudioZero.play(myFile);
+    AudioZero.play(SD.open("cic8bit.wav"));
     //delay(3000);
     AudioZero.end();
 
@@ -107,7 +107,7 @@ if (analogRead(flexPin) != 1023)
 
 
 
- delay(50);
+ delay(500);
  //myFile = SD.open("cic8bit.wav");
 
 }  
