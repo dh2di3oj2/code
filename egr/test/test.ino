@@ -108,6 +108,6 @@ if (analogRead(flexPin) != 1023)
 
 
  delay(50);
- myFile = SD.open("cic8bit.wav");
+ //myFile = SD.open("cic8bit.wav");
 
 }  
