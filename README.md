@@ -1,2 +1,2 @@
-# code
-## Sanjeevs code for School and stuff
+# my code
+## Sanjeev's code for School and stuff
