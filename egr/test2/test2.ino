@@ -152,18 +152,20 @@ void loop() {
 
   skipState = digitalRead(skipPin);
   buttonState = digitalRead(buttonPin);
+   Serial.print("p");
   Serial.println(buttonState);
+  Serial.print("s");
   Serial.println(skipState);
 
   // check if the pushbutton is pressed. If it is, the buttonState is HIGH:
-  if (skipState == HIGH) {
+  if (skipState == LOW) {
     song++;  // increment
     if (song == 2) {
       song = 0;  // reset
     }
   }
 
-  if (buttonState == HIGH) {
+  if (buttonState == LOW) {
 
 
 
@@ -176,9 +178,10 @@ void loop() {
     if (song == 1) {
       Serial.println("playing wave file 2");
 
-      AudioOutI2S.loop(waveFile2);
-      delay(5000);
+      AudioOutI2S.play(waveFile2);
+      
 
     }
   }
+  delay(500);
 }
