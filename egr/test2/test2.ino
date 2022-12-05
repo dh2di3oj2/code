@@ -45,9 +45,9 @@ SDWaveFile waveFile2;
 void setup() {
   // Open serial communications and wait for port to open:
   Serial.begin(9600);  //115200
-  while (!Serial) {
+/*   while (!Serial) {
     ;  // wait for serial port to connect. Needed for native USB port only
-  }
+  } */
 
   // setup the SD card, depending on your shield of breakout board
   // you may need to pass a pin number in begin for SS
@@ -165,7 +165,7 @@ void loop() {
     }
   }
 
-  if (buttonState == LOW) {
+  if (buttonState == HIGH) {
 
 
 
