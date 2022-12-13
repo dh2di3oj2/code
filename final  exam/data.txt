@@ -1,0 +1,27 @@
+2 degree
+poly score 0.5255323715582504
+MSE for test set
+MSE: polynomial  45.9489296086391
+R squared for test set
+R squared: polynomial  -1.1537280471091984
+Polynomial alpha:  0.1707352647470692
+
+3 degree
+poly score 0.4532627641908276
+MSE for test set
+MSE: polynomial  44.96823983682698
+R squared for test set
+R squared: polynomial  -0.6925864647138327
+Polynomial alpha:  0.14174741629268062
+Polynomial coefficients:  [ 0.  0.  0. ... -0.  0. -0.]
+
+
+
+4 degree
+poly score 0.4272740792019829
+MSE for test set
+MSE: polynomial  50.83235615285475
+R squared for test set
+R squared: polynomial  -2.0155640816980793
+Polynomial alpha:  0.24770763559917114
+Polynomial coefficients:  [ 0. -0.  0. ...  0. -0. -0.]
