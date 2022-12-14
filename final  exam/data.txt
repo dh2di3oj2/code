@@ -1,3 +1,56 @@
+pca_vars = ['lp_lat_abst_fill','eleva','avg_temp','pmean','statehiste1500_02n','tropical','rugged','agyears_ext','pln_sxHr_mean']
+Variance explained by each latent variable in PCA:  [0.48900626 0.18368121 0.13847285]
+
+linear model:  
+cross val for test set
+lin score 0.5234820488969514
+MSE for test set
+MSE: lin  36.809810610340364
+Equation:
+0.747 federalism_GT + 2.686 origtime2 + 3.467 Maddison_gdppc_1990_estimate_ln + 0.046 mountains + 0.036 log_ocdistance_new + 2.097 irri_impact5 + 3.18PC2
+
+
+Lasso linear: 
+cross val for test set
+lasso score 0.5778750544730058
+MSE for test set
+MSE: lasso  40.46635484280524
+R squared for test set
+R squared: lasso  -0.2821590846896571
+Lasso alpha:  0.07359814475265763
+Lasso coefficients:  [ 0.          0.         -0.         -0.         -0.          0.
+ -0.35687746  1.211673   -0.          0.         -0.11648233 -0.
+ -0.         -0.0512826  -0.          0.65366216  1.56167731]
+
+
+poly lasso:  
+cross val for test set
+poly score 0.5330521875666001
+MSE for test set
+MSE: polynomial  37.22134476823166
+R squared for test set
+R squared: polynomial  -0.071961808689047
+Polynomial alpha:  0.09353431520292387
+
+
+
+random forest: 
+
+cross val for test set
+rf score 0.6297451290612033
+MSE for test set
+MSE: random forest  25.824012788241678
+R squared for test set
+R squared: random forest  0.5468563085170026
+Random forest feature importances:  [0.0051209  0.02887004 0.04601014 0.00931344 0.01467882 0.02257656
+ 0.01616768 0.01510982 0.01446801 0.01166771 0.0331606  0.01747401
+ 0.46894886 0.04988308 0.077887   0.0188551  0.14980823]
+
+
+
+ 
+-----------------------------------------
+
 below resutls done with PCA taking pca_vars = ['lp_lat_abst_fill','eleva','avg_temp','pmean','statehiste1500_02n','tropical','rugged']
   and condensing into PC0 PC1 and PC2
 
@@ -76,5 +129,5 @@ MSE: random forest  19.860037128862547
 
 
 MSE: random forest  27.224216844774407
-
+----------------------------------------------------------------------------
 
