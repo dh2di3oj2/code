@@ -1,3 +1,6 @@
+below resutls done with PCA taking pca_vars = ['lp_lat_abst_fill','eleva','avg_temp','pmean','statehiste1500_02n','tropical','rugged']
+  and condensing into PC0 PC1 and PC2
+
 2 degree
 poly score 0.5255323715582504
 MSE for test set
@@ -25,3 +28,53 @@ R squared for test set
 R squared: polynomial  -2.0155640816980793
 Polynomial alpha:  0.24770763559917114
 Polynomial coefficients:  [ 0. -0.  0. ...  0. -0. -0.]
+
+lasso:
+cross val for test set
+lasso score 0.5329595111407723
+MSE for test set
+MSE: lasso  39.2606700623096
+R squared for test set
+R squared: lasso  -0.2867100469134167
+Lasso alpha:  0.08111308307896872
+Lasso coefficients:  [ 0.00000000e+00  0.00000000e+00 -0.00000000e+00 -5.55728952e+00
+  0.00000000e+00 -0.00000000e+00  2.11671048e-01 -1.57807792e-01
+  1.46898441e+00 -0.00000000e+00  0.00000000e+00 -9.22342704e-02
+ -0.00000000e+00 -0.00000000e+00  0.00000000e+00 -9.29136159e-04
+ -4.57493275e-02 -0.00000000e+00  5.52382196e-01 -0.00000000e+00]
+
+ linear:
+ cross val for test set
+lin score 0.5192413579194438
+MSE for test set
+MSE: lin  37.5443629013814
+Equation:
+1.36federalism_GT + 0.66origtime2 + 3.51Maddison_gdppc_1990_estimate_ln + 2.05mountains + 0.01log_ocdistance_new + 0.0irri_impact5 + 5.94['PC2']e
+
+
+cross val for test set
+rf score 0.6802902604618266
+MSE for test set
+MSE: random forest  25.069344750173705
+R squared for test set
+R squared: random forest  0.47372544974172126
+Random forest feature importances:  [0.00590437 0.01128767 0.0302841  0.20698052 0.00777634 0.01154771
+ 0.01628461 0.0381405  0.01905094 0.01362788 0.00815745 0.02931441
+ 0.0144575  0.29551662 0.02413359 0.17653233 0.03014891 0.0263243
+ 0.02515075 0.00937951]
+
+
+
+
+
+now trying to add more agricultural like variables to pca_vars:
+
+pca_vars = ['lp_lat_abst_fill','eleva','avg_temp','pmean','statehiste1500_02n','tropical','rugged','agyears_ext','pln_sxHr_mean']
+MSE: random forest  19.860037128862547
+
+
+
+
+MSE: random forest  27.224216844774407
+
+
